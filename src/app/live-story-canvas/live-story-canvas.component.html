@@ -1,0 +1,55 @@
+<p>live-story-canvas works!</p>
+<table>
+  <tr>
+    <td>
+      <canvas #canvas width="324px" height="498px" style="border:1px solid #000000;"></canvas>
+    </td>
+    <td class="preview">
+      <div>
+        <canvas id="overlay" #canvasoverlay width="324px" height="498px"></canvas>
+        <canvas id="logo" #canvaslogo width="168px" height="168px"></canvas>
+        <canvas id="bg" #canvasbg width="324px" height="498px"></canvas>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <input type="file" name="icon" (change)="onFileSelected($event)"/>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <input type="button" name="download" (click)="download($event)" value="Download"/>
+    </td>
+<!--    <td>-->
+<!--      <input type="button" name="download" (click)="downloadLogo($event)" value="Download"/>-->
+<!--    </td>-->
+<!--    <td>-->
+<!--      <input type="button" name="download" (click)="downloadBg($event)" value="Download"/>-->
+<!--    </td>-->
+  </tr>
+</table>
+
+<style>
+  .preview div {
+    position: relative;
+    width: 324px;
+    height: 498px;
+  }
+  .preview div #overlay {
+    z-index: 1;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+  .preview div #logo {
+    position: absolute;
+    left: 78px;
+    top: 72px;
+  }
+  .preview div #bg {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+</style>
